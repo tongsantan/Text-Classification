@@ -39,6 +39,7 @@ class DataIngestion:
             df_selected = pd.concat([e,b,t,m], ignore_index=True)
             df_selected = df_selected.reindex(np.random.permutation(df_selected.index)).reset_index(drop=True)
             df_selected['TARGET'] = df_selected.apply(lambda x: encoded(x['CATEGORY']), axis=1)
+            
             os.makedirs(os.path.dirname(self.config.processed_data_path),exist_ok=True)
             df_selected.to_csv(self.config.processed_data_path,index=False,header=True)   
             
