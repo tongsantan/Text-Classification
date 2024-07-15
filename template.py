@@ -19,8 +19,6 @@ list_of_files = [
     "requirements.txt",
     "setup.py",
     "notebook/News_Aggregator_Classification.ipynb",
-    "Dockerfile",
-    "app.py",
     "main.py",
 ]
 

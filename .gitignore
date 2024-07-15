@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 
 output/finetuned_model/*
+
+notebook/raw_data/*
