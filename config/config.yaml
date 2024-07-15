@@ -1,0 +1,39 @@
+output_root: output
+
+data_ingestion:
+  root_dir: output/data_ingestion
+  input_data_path: notebook/raw_data/uci-news-aggregator.csv
+  processed_data_path: data/processed_uci_news_aggregator.csv 
+  X_train_data_path: output/data_ingestion/X_train.csv
+  X_test_data_path: output/data_ingestion/X_test.csv
+  y_train_data_path: output/data_ingestion/y_train.csv
+  y_test_data_path: output/data_ingestion/y_test.csv
+  X_val_data_path: output/data_ingestion/X_val.csv
+  y_val_data_path: output/data_ingestion/y_val.csv
+  raw_data_path: output/data_ingestion/data.csv
+
+data_transformation:
+  root_dir: output/data_transformation
+  tokenizer_data_path: output/data_transformation/tokenizer.pickle
+  X_train_data_path: output/data_ingestion/X_train.csv
+  X_test_data_path: output/data_ingestion/X_test.csv
+  y_train_data_path: output/data_ingestion/y_train.csv
+  y_test_data_path: output/data_ingestion/y_test.csv
+  X_val_data_path: output/data_ingestion/X_val.csv
+  y_val_data_path: output/data_ingestion/y_val.csv
+  raw_data_path: output/data_ingestion/data.csv
+  train_dataset_path: output/data_transformation/train_dataset
+  val_dataset_path: output/data_transformation/val_dataset
+  test_dataset_path: output/data_transformation/test_dataset
+
+model_trainer:
+  root_dir: output/model_trainer
+  train_dataset_path: output/data_transformation/train_dataset
+  val_dataset_path: output/data_transformation/val_dataset
+  test_dataset_path: output/data_transformation/test_dataset
+  model_data_path: output/model_trainer/finetuned_model
+
+model_evaluation:
+  root_dir: output/model_evaluation
+  model_data_path: output/model_trainer/finetuned_model
+  tokenizer_data_path: output/data_transformation/tokenizer.pickle
