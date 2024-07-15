@@ -14,7 +14,6 @@ class DataIngestionConfig:
     y_test_data_path: Path
     X_val_data_path: Path
     y_val_data_path: Path 
-    raw_data_path: Path 
 
 @dataclass(frozen=True)
 class DataTransformationConfig:

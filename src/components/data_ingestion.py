@@ -41,8 +41,6 @@ class DataIngestion:
             df_selected['TARGET'] = df_selected.apply(lambda x: encoded(x['CATEGORY']), axis=1)
             os.makedirs(os.path.dirname(self.config.processed_data_path),exist_ok=True)
             df_selected.to_csv(self.config.processed_data_path,index=False,header=True)   
-            os.makedirs(os.path.dirname(self.config.raw_data_path),exist_ok=True)
-            df_selected.to_csv(self.config.raw_data_path,index=False,header=True)         
             
             logger.info("Splitting the data into X and y")
             seed = 18
@@ -54,6 +52,8 @@ class DataIngestion:
             X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.10, random_state=seed)
             
             logger.info("Saving the data")
+            os.makedirs(os.path.dirname(self.config.X_train_data_path),exist_ok=True)
+            
             X_train.to_csv(self.config.X_train_data_path,index=False,header=True)
             X_test.to_csv(self.config.X_test_data_path,index=False,header=True)
             y_train.to_csv(self.config.y_train_data_path,index=False,header=True)

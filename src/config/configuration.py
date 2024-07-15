@@ -32,8 +32,7 @@ class ConfigurationManager:
             y_train_data_path=config.y_train_data_path,
             y_test_data_path=config.y_test_data_path,
             X_val_data_path=config.X_val_data_path,
-            y_val_data_path=config.y_val_data_path,
-            raw_data_path=config.raw_data_path 
+            y_val_data_path=config.y_val_data_path
         )
 
         return data_ingestion_config

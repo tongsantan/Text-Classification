@@ -10,7 +10,6 @@ data_ingestion:
   y_test_data_path: output/data_ingestion/y_test.csv
   X_val_data_path: output/data_ingestion/X_val.csv
   y_val_data_path: output/data_ingestion/y_val.csv
-  raw_data_path: output/data_ingestion/data.csv
 
 data_transformation:
   root_dir: output/data_transformation
